@@ -8,19 +8,17 @@ var velocity = Vector2.ZERO
 var screensize = Vector2(480, 720)
 var can_get_hurt = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body. 
 
-
-func start():
+func start() -> void:
 	set_process(true)
 	position = screensize / 2
 	$AnimatedSprite2D.animation = "idle"
-	
-func die():
+
+
+func die() -> void:
 	$AnimatedSprite2D.animation = "hurt"
 	set_process(false)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
