@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brdcxow4ticef"]
+
+[ext_resource type="Script" path="res://cactus.gd" id="1_b3j8s"]
+[ext_resource type="Texture2D" uid="uid://dkh31vud66f8l" path="res://assets/cactus.png" id="1_nv388"]
+
+[node name="Cactus" type="Area2D" groups=["obstacles"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_b3j8s")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nv388")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12.5, 30.5, -13.5, 25, -16.5, 26, -18.5, 25.5, -17, 24, -13.5, 23.5, -14, 19.5, -19, 19.5, -19, 17.5, -14.5, 17, -15, 13, -20, 13.5, -20, 11.5, -15.5, 11, -16, 6.5, -21, 7, -21.5, 4.5, -17, 3.5, -17.5, -1, -22, 0, -22.5, -2.5, -18, -3, -18.5, -7.5, -22, -7, -22, -9.5, -18, -9.5, -18, -13, -22, -13, -22, -16, -17.5, -16, -16.5, -18, -19.5, -21.5, -19, -23, -17.5, -23, -15, -19.5, -10, -22, -11.5, -24.5, -11, -27, -9, -25.5, -8.5, -22.5, -2, -24.5, -2.5, -28.5, -1, -29, 0, -24.5, 5.5, -25, 5, -29.5, 8, -29.5, 8, -25, 12, -24, 14.5, -27, 16.5, -26.5, 16, -24.5, 13, -22.5, 15, -20, 18.5, -22, 20, -21, 20, -19.5, 15.5, -18, 17, -12, 21, -13, 21.5, -11.5, 21, -10, 17, -9.5, 17, -5, 21.5, -5, 22.5, -3, 21.5, -2, 17, -2, 17, 2.5, 22, 2.5, 22, 4.5, 17, 4.5, 17, 9.5, 21, 10, 21, 12.5, 16, 12.5, 15, 16, 19.5, 16.5, 19.5, 19, 14, 18.5, 13, 21.5, 16.5, 24, 15.5, 26, 12, 24, 9.5, 30.5)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
